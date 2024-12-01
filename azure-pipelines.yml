@@ -1,15 +1,15 @@
 trigger:
-  - main
+  - main  # Trigger pipeline on changes to the 'main' branch
 
 pool:
-  vmImage: 'windows-latest'  # Use Windows as the environment
+  name: Lab4-Self-Hosted  # Specify your self-hosted agent pool
 
 steps:
   # Step 1: Install .NET SDK
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '8.x'  # Ensure correct version
+      version: '8.x'  # Ensure you're using .NET 8.x as required
 
   # Step 2: Restore NuGet Packages
   - task: DotNetCoreCLI@2

@@ -35,8 +35,7 @@ steps:
   - task: NuGetCommand@2
     inputs:
      command: 'push'
-     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+     packagesToPush: '**/*.nupkg'
      feedsToUse: 'select'
      publishVstsFeed: 'StringExtensionsFeed' # Replace with your actual feed name
      allowPackageConflicts: true
-    
